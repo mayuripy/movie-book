@@ -1,5 +1,5 @@
  import express from "express";
-
+ import mongodb from "mangodb"
  const app = express();
 
  app.use("/",(req,res,next) =>{
@@ -9,3 +9,7 @@
  app.listen(5000, () =>{
     console.log("connected to localhost port ${5000}");
  })
+
+ //SQKASxNXgS9HacDg
+
+ //mongodb+srv://chaudharimayuri2004:<password>@cluster0.lnub8zl.mongodb.net/?retryWrites=true&w=majority
