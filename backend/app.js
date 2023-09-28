@@ -1,10 +1,9 @@
- import express from "express";
- //import mongodb from "mangodb"
+ import express from "express"
  import mongoose from "mangoose"
  const app = express();
 
  app.use("/",(req,res,next) =>{
-    res.send("<h1>hellow</h1>");
+    res.send("<h1>ohh oh!</h1>");
  })
 
 
