@@ -4,6 +4,7 @@
 
  dotenv.config();
  const app = express();
+ 
 
  app.use("/",(req,res,next) =>{
     res.send("<h1>abe tu ja nare </h1>");
@@ -16,6 +17,8 @@
     console.log("connecting to the database and server runnig")
   )
 )
+
+.catch((e) => console.log(e));
  
 
 
