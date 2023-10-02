@@ -1,10 +1,14 @@
  import express from "express";
  import mongoose from "mangoose";
  import dotenv from "dotenv";
+import userRouter from "./router/user-routs";
 
  dotenv.config();
  const app = express();
  
+ //middelewars
+
+ app.use("./user",userRouter)
 
  app.use("/",(req,res,next) =>{
     res.send("<h1>abe tu ja nare </h1>");
