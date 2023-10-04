@@ -17,9 +17,9 @@ import userRouter from "./router/user-routs";
 
  mongoose.connect("mongodb+srv://chaudharimayuri2004:${process.env.MANGOOSE+PASSWORD }@cluster0.lnub8zl.mongodb.net/?retryWrites=true&w=majority"
 ).then(() => 
-  app.listen(5000,()=>
-    console.log("connecting to the database and server runnig")
-  )
+app.listen(5000,()=>
+console.log("connecting to the database and server runnig")
+)
 )
 
 .catch((e) => console.log(e));
