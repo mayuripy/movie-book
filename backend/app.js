@@ -1,31 +1,30 @@
- import express from "express";
- import mongoose from "mangoose";
- import dotenv from "dotenv";
-import userRouter from "./router/user-routs";
+// const express = require("express");
+// const mongoose = require("mongoose");
+// const dotenv = require("dotenv");
 
- dotenv.config();
- const app = express();
- 
- //middelewars
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import { userRouter } from "./src/router/user-router.js"
 
- app.use("./user",userRouter)
+// const userRouter = require("./router/user-router");
+dotenv.config();
 
- app.use("/",(req,res,next) =>{
-    res.send("<h1>abe tu ja nare </h1>");
- })
- console.log("connecting to the database and server runnig")
+const app = express();
 
- mongoose.connect("mongodb+srv://chaudharimayuri2004:${process.env.MANGOOSE+PASSWORD }@cluster0.lnub8zl.mongodb.net/?retryWrites=true&w=majority"
-).then(() => 
-app.listen(5000,()=>
+app.use("/user", userRouter);
 
-)
-)
+app.get("/", (req, res, next) => {
+  return res.send("<h1>abe tu ja nare </h1>");
+});
 
-.catch((e) => console.log(e));
- 
-
-
- //SQKASxNXgS9HacDg
-
- //mongodb+srv://chaudharimayuri2004:<password>@cluster0.lnub8zl.mongodb.net/?retryWrites=true&w=majority
+// function main(){
+mongoose
+  .connect(`mongodb://localhost:27017/`)
+  .then(() =>
+    app.listen(5000, () => {
+      console.log("App listening on port 5000!");
+    })
+  )
+  .catch((e) => console.log(e));
+// }
