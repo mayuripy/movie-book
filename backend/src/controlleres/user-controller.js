@@ -1,7 +1,7 @@
 
-// import User from "../models/user";
+ import User from "../models/user";
 // const User = require("../models/user")
-import User from "../models/user";
+import User from "../models/user.js";
 export const getAIIUser = async (req,res,next) => {
     let users;
     try {
